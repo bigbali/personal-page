@@ -1,0 +1,36 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    height: 5rem;
+    padding: 0 5rem 0 5rem;
+    background-color: var(--color-main-bg);
+
+    >.brand {
+        flex: 1;
+        display: flex;
+        align-items: center;
+    }
+
+    >.navigation {
+        flex: 2;
+        display: flex;
+        justify-content: flex-end;
+
+        span {
+            display: flex;
+            align-items: center;
+            margin-left: 5rem;
+            list-style: none;
+        }
+    }
+
+    &:after {
+        content: "";
+        position: absolute;
+        top: 5rem;
+        left: 0;
+        right: 0;
+        height: 2rem;
+        background: linear-gradient(180deg, #DFDFDF 0%, rgba(245, 245, 245, 0) 35%);
+    }
+}
