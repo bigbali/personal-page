@@ -1,7 +1,7 @@
 .header {
     display: flex;
     justify-content: space-between;
-    height: 5rem;
+    height: var(--header-height);
     padding: 0 5rem 0 5rem;
     background-color: var(--color-main-bg);
 
@@ -19,18 +19,37 @@
         span {
             display: flex;
             align-items: center;
-            margin-left: 5rem;
+            margin-left: var(--header-height);
             list-style: none;
+
+            a {
+                padding: 10px;
+                background-image: linear-gradient(var(--color-theme),
+                        var(--color-theme));
+                background-repeat: no-repeat;
+                background-size: 100% 0;
+                background-position: 0 0;
+                transition: background-size 0.1s ease,
+                    background-position 0.1s ease,
+                    color 0.1s;
+
+                &:hover {
+                    background-size: 100% 100%;
+                    color: white;
+                }
+            }
         }
     }
 
     &:after {
         content: "";
         position: absolute;
-        top: 5rem;
+        top: var(--header-height);
         left: 0;
         right: 0;
         height: 2rem;
-        background: linear-gradient(180deg, #DFDFDF 0%, rgba(245, 245, 245, 0) 35%);
+        background: linear-gradient(180deg,
+                #DFDFDF 0%,
+                rgba(245, 245, 245, 0) 35%);
     }
 }

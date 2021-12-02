@@ -1,18 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500&family=Raleway&display=swap');
+
+:root {
+    --color-main-bg: #F5F5F5;
+    --color-main-fg: #202020;
+    --color-theme: #990f02;
+    --header-height: 4rem;
+}
 
 * {
     box-sizing: border-box;
-    font-family: "Raleway", sans-serif;
+    color: var(--color-main-fg);
 }
 
 body {
+    font-family: "Raleway", sans-serif;
     margin: 0;
 }
 
 a {
     text-decoration: none;
-}
-
-:root {
-    --color-main-bg: #F5F5F5;
 }
