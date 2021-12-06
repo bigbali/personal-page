@@ -1,11 +1,15 @@
 .welcome-overlay {
-    // display: grid;
-    // place-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     z-index: 100;
     inset: 0;
     font-family: "Montserrat", sans-serif;
     background-color: white;
+    overflow: hidden;
+    perspective-origin: 50% 50%;
 
     >*:not(img) {
         z-index: 99;
@@ -28,37 +32,49 @@
     }
 
     .me {
-        position: absolute;
+        display: inline-block;
         font-size: 8rem;
         font-weight: 300;
         line-height: 8rem;
-        left: 20%;
-        top: 50%;
-        transform: translate(0, -50%);
         opacity: 0;
+        transform: translateX(32px);
 
         .name,
         .profession {
-            display: inline-block;
-            position: absolute;
-            width: max-content;
-            opacity: 0;
+            display: block;
+            position: relative;
+            transform: translateY(50%);
+
+            .animated {
+                display: inline-block;
+            }
         }
 
-        .profession {
-            transform: translateY(100%);
+        .profession .im,
+        .profession .animated {
+            opacity: 0;
         }
     }
 
     .do {
-        position: absolute;
+        display: block;
         font-weight: 400;
         font-size: 2.5rem;
         line-height: 4rem;
-        left: 20%;
-        top: 50%;
-        transform: translate(0, -50%);
+        transform: translateY(-5rem);
         opacity: 0;
         padding-left: 12px;
     }
+
+    .enter {
+        padding: 2rem 4rem;
+        font-family: "Montserrat", sans-serif;
+        font-size: 3rem;
+        background-color: var(--color-theme);
+        color: white;
+        border-color: transparent;
+        border-radius: 32px;
+        opacity: 0;
+    }
+
 }
