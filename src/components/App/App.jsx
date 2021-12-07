@@ -8,7 +8,7 @@ import WelcomeOverlay from '../WelcomeOverlay/WelcomeOverlay.component';
 const App = () => {
     return (
         <>
-            <WelcomeOverlay />
+            {/* <WelcomeOverlay /> */}
             <Header />
             <Routes>
                 <Route path="/" element={<IndexPage />} />

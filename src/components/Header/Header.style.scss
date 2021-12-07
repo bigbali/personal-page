@@ -1,9 +1,16 @@
 .header {
     display: flex;
     justify-content: space-between;
+    position: sticky;
+    z-index: 99;
+    left: 0;
+    right: 0;
+    top: 0;
     height: var(--header-height);
     padding: 0 5rem 0 5rem;
-    background-color: var(--color-main-bg);
+    background-color: var(--color-main-bg-glass);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 
     >.brand {
         flex: 1;
@@ -47,9 +54,10 @@
         top: var(--header-height);
         left: 0;
         right: 0;
-        height: 2rem;
+        height: 0.5rem;
         background: linear-gradient(180deg,
-                #DFDFDF 0%,
-                rgba(245, 245, 245, 0) 35%);
+                rgba(0, 0, 0, 0.8) 0%,
+                rgba(0, 0, 0, 0.2) 50%,
+                rgba(0, 0, 0, 0) 100%);
     }
 }
