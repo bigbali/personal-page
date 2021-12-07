@@ -1,0 +1,19 @@
+.section-selector {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+    position: fixed;
+    z-index: 99;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+
+    a {
+        display: block;
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        border: 3px solid white;
+    }
+}

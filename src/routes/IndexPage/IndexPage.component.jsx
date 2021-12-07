@@ -1,7 +1,10 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import Background from '../../media/jpg/ibg.jpg';
 import BGVid from '../../media/mp4/0.mp4';
+import BGVid1 from '../../media/mp4/1.mp4';
+import PortfolioGrid from '../../components/PortfolioGrid';
+import SectionSelector from '../../components/SectionSelector';
 import './IndexPage.style.scss';
 
 /** Displays an animated overlay on first visit. */
@@ -55,10 +58,11 @@ const IndexPage = () => {
 
     return (
         <main className="index-page">
-            <section className="animated">
+            <SectionSelector sections={["animated", "portfolio", "portfolio2"]} />
+            <section id="animated" className="animated">
                 <div className="video-container">
                     <video autoPlay muted loop>
-                        <source src={BGVid} type="video/mp4"></source>
+                        <source src={BGVid1} type="video/mp4"></source>
                     </video>
                 </div>
                 <div ref={wrapper} className="wrapper">
@@ -88,49 +92,12 @@ const IndexPage = () => {
                     </span>
                 </div>
             </section>
-            <section>
-                <h1>jionmi</h1>
-                <h1>jionmi</h1>
-                <h1>jionmi</h1>
-                <h1>jionmi</h1>
-                <h1>jionmi</h1>
-                <h1>jionmi</h1>
-                <h1>jionmi</h1>
-                <h1>jionmi</h1>
-                <h1>jionmi</h1>
-                <h1>jionmi</h1>
-                <h1>jionmi</h1>
-                <h1>jionmi</h1>
-                <h1>jionmi</h1>
-                <h1>jionmi</h1>
-                <h1>jionmi</h1>
-                <h1>jionmi</h1>
-                <h1>jionmi</h1>
-                <h1>jionmi</h1>
-                <h1>jionmi</h1>
-                <h1>jionmi</h1>
-                <h1>jionmi</h1>
-                <h1>jionmi</h1>
-                <h1>jionmi</h1>
-                <h1>jionmi</h1>
-                <h1>jionmi</h1>
-                <h1>jionmi</h1>
-                <h1>jionmi</h1>
-                <h1>jionmi</h1>
-                <h1>jionmi</h1>
-                <h1>jionmi</h1>
-                <h1>jionmi</h1>
-                <h1>jionmi</h1>
-                <h1>jionmi</h1>
-                <h1>jionmi</h1>
-                <h1>jionmi</h1>
-                <h1>jionmi</h1>
-                <h1>jionmi</h1>
-                <h1>jionmi</h1>
-                <h1>jionmi</h1>
-                <h1>jionmi</h1>
-                <h1>jionmi</h1>
-                <h1>jionmi</h1>
+            <section id="portfolio" className="portfolio">
+                <h1>See my work:</h1>
+                <PortfolioGrid />
+            </section>
+            <section id="portfolio2" className="portfolio">
+
             </section>
         </main>
     )
