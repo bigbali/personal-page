@@ -7,7 +7,7 @@ import PortfolioGrid from '../../components/PortfolioGrid';
 import SectionSelector from '../../components/SectionSelector';
 import './IndexPage.style.scss';
 
-const sections = ["#animated", "#portfolio", "#portfolio2"]
+const sections = [".animated", "#portfolio", "#portfolio2"]
 
 /** Displays an animated overlay on first visit. */
 const IndexPage = () => {
