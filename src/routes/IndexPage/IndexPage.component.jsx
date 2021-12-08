@@ -7,6 +7,8 @@ import PortfolioGrid from '../../components/PortfolioGrid';
 import SectionSelector from '../../components/SectionSelector';
 import './IndexPage.style.scss';
 
+const sections = ["#animated", "#portfolio", "#portfolio2"]
+
 /** Displays an animated overlay on first visit. */
 const IndexPage = () => {
     const wrapper = useRef();
@@ -58,7 +60,10 @@ const IndexPage = () => {
 
     return (
         <main className="index-page">
-            <SectionSelector sections={["animated", "portfolio", "portfolio2"]} />
+            <SectionSelector
+                sections={sections}
+                observe={sections}
+            />
             <section id="animated" className="animated">
                 <div className="video-container">
                     <video autoPlay muted loop>
