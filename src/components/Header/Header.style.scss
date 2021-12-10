@@ -22,6 +22,7 @@
         flex: 2;
         display: flex;
         justify-content: flex-end;
+        transform: translateX(20px); // Adjust for padding
 
         span {
             display: flex;
@@ -30,7 +31,7 @@
             list-style: none;
 
             a {
-                padding: 10px;
+                padding: 10px 20px;
                 background-image: linear-gradient(var(--color-theme),
                         var(--color-theme));
                 background-repeat: no-repeat;
@@ -42,7 +43,7 @@
 
                 &:hover {
                     background-size: 100% 100%;
-                    color: white;
+                    color: var(--color-main-fg);
                 }
             }
         }
