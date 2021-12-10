@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import portfolio from '../../data/projects';
 import './PortfolioGrid.style.scss';
 
@@ -7,8 +8,9 @@ const fallback = "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww
 const renderGrid = () => {
     return portfolio.map(project => {
         return (
-            <div
+            <Link
                 key={project.title}
+                to={`project/${project.slug}`}
                 className="project-card"
             >
                 <img
@@ -19,7 +21,7 @@ const renderGrid = () => {
                 <p className="title">
                     {project.title || "Untitled Project"}
                 </p>
-            </div>
+            </Link>
         )
     })
 }

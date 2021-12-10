@@ -4,8 +4,8 @@ import BGVid1 from '../../media/mp4/1.mp4';
 import PortfolioGrid from '../../components/PortfolioGrid';
 import SectionSelector from '../../components/SectionSelector';
 import './IndexPage.style.scss';
+import { useLocation } from 'react-router';
 
-// const sections = ["#animated", "#portfolio", "#portfolio2"];
 const sections = [
     {
         id: "#animated",
@@ -25,7 +25,7 @@ const sections = [
 ]
 
 /** Displays an animated overlay on first visit. */
-const IndexPage = () => {
+const IndexPage = (props) => {
     const wrapper = useRef();
 
     useEffect(() => {
