@@ -6,22 +6,21 @@ const SectionSelector = ({ sections, observe }) => {
 
     useEffect(() => {
         if (observe) {
-            // Detect when we scroll to another section,
+            // If 'observe', detect when we scroll to another section,
             // and update the current section
             const observerAction = (entries, observe) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        // This solution allows us to use either IDs or classes
                         const idSelector = "#" + entry.target.id;
                         const classSelector = "." + entry.target.className;
 
-                        // Prioritize ID over class (if we have ID, don't bother with class)
-                        if (sections?.includes(idSelector)) {
-                            setCurrentSection(idSelector);
-                        }
-                        else if (sections?.includes(classSelector)) {
-                            setCurrentSection(classSelector);
-                        }
+                        // Works both with IDs and classes, but ID is prioritized
+                        sections?.forEach((section) => {
+                            if (section.id === idSelector
+                                || section.class === classSelector) {
+                                setCurrentSection(section)
+                            }
+                        })
                     }
                 })
             }
@@ -32,31 +31,34 @@ const SectionSelector = ({ sections, observe }) => {
                 threshold: 0.6
             });
 
-            observe?.forEach(element => {
-                // For each element in 'observe', add an observer
-                observer.observe(document.querySelector(element))
+            sections?.forEach(section => {
+                // For each section, add an observer
+                observer.observe(document.querySelector(section.id || section.class))
             })
         }
     }, [sections, observe])
 
     const renderSectionAnchors = () => {
         return sections?.map(section => {
+            const sectionSelector = section.id || section.class;
             return (
-                <span key={section}
+                <span key={sectionSelector}
                     className={section === currentSection
                         ? "active"
                         : ""}
+                    data-title={section.title ?? ""}
                     onClick={() => {
                         const headerOffset = document.querySelector(".header").scrollHeight;
-                        const sectionOffset = document.querySelector(section).offsetTop;
+                        const sectionOffset = document.querySelector(sectionSelector).offsetTop;
 
                         window.scrollTo({
                             top: sectionOffset - headerOffset,
                             behavior: "smooth"
                         });
+
+                        // If observe is false, just select section.
+                        // Else, it will be done using IntersectionObserver.
                         observe ?? setCurrentSection(section);
-                        // If no array to observe is given, set current on click,
-                        // Else, IntersectionObserver will set it automatically
                     }}
                 >
                 </span>

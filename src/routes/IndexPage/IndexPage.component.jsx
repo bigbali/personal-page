@@ -1,13 +1,28 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-import Background from '../../media/jpg/ibg.jpg';
-import BGVid from '../../media/mp4/0.mp4';
 import BGVid1 from '../../media/mp4/1.mp4';
 import PortfolioGrid from '../../components/PortfolioGrid';
 import SectionSelector from '../../components/SectionSelector';
 import './IndexPage.style.scss';
 
-const sections = [".animated", "#portfolio", "#portfolio2"]
+// const sections = ["#animated", "#portfolio", "#portfolio2"];
+const sections = [
+    {
+        id: "#animated",
+        class: ".animated",
+        title: "Landing"
+    },
+    {
+        id: "#portfolio",
+        class: ".portfolio",
+        title: "Example Projects"
+    },
+    {
+        id: "#portfolio2",
+        class: ".portfolio2",
+        title: "No Content Here Yet"
+    }
+]
 
 /** Displays an animated overlay on first visit. */
 const IndexPage = () => {
@@ -62,7 +77,7 @@ const IndexPage = () => {
         <main className="index-page">
             <SectionSelector
                 sections={sections}
-                observe={sections}
+                observe={true}
             />
             <section id="animated" className="animated">
                 <div className="video-container">
