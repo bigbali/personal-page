@@ -2,9 +2,9 @@ import './AboutPage.style.scss';
 
 const AboutPage = () => {
     return (
-        <div>
+        <main>
             <h1>Hello</h1>
-        </div>
+        </main>
     )
 }
 
