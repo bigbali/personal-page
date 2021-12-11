@@ -10,7 +10,7 @@
                 var(--color-main-bg),
                 var(--color-main-fg),
                 var(--color-main-fg));
-        // This makes the animation feel smooth
+        // This makes the animation feel smoother
         background-position: 100% 100%;
         background-size: 0% 100%;
         background-repeat: no-repeat;
@@ -108,5 +108,4 @@
         padding-right: 20%;
         line-height: 1.5rem;
     }
-
 }

@@ -1,33 +1,29 @@
 import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 import Header from '../Header/Header.component';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import IndexPage from '../../routes/IndexPage/';
+import ProjectPage from '../../routes/ProjectPage';
+import AboutPage from '../../routes/AboutPage';
+import IndexPage from '../../routes/IndexPage';
 import './App.style.scss';
-import ProjectPage from '../../routes/ProjectPage/ProjectPage.component';
 
 const App = () => {
-    console.log(window.location.origin)
-
     return (
         <>
             <Header />
             <Routes>
                 <Route path="/" element={<IndexPage />} />
+                <Route path="/about" element={<AboutPage />} />
                 <Route path="/project/:slug" element={<ProjectPage />} />
-                <Route path="/contact" element={<IndexPage />} />
-                <Route path="/about" element={<IndexPage />} />
                 <Route
                     path="*"
                     element={
-                        <main style={{ padding: "1rem" }}>
-                            <p>There's nothing here!</p>
+                        <main className="not-found">
+                            <h1>Oops!</h1>
+                            <h2>Looks like this path leads nowhere.</h2>
                         </main>
                     }
                 />
             </Routes>
-            <div>
-
-            </div>
         </>
     )
 }
