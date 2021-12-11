@@ -26,6 +26,11 @@ body {
     margin: 0;
     font-family: "Raleway", sans-serif;
     background-color: var(--color-main-bg);
+    overflow-x: hidden;
+
+    ::selection {
+        background-color: var(--color-theme);
+    }
 }
 
 a {

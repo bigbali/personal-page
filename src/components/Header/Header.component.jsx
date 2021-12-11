@@ -5,7 +5,7 @@ import './Header.style.scss';
 const Brand = () => {
     return (
         <div className="brand">
-            Burján Blaázs
+            balazs burjan
         </div>
     )
 }
@@ -21,11 +21,6 @@ const Navigation = () => {
             <span>
                 <NavLink to="/about">
                     about
-                </NavLink>
-            </span>
-            <span>
-                <NavLink to="/contact">
-                    contact
                 </NavLink>
             </span>
         </nav>

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router';
 import './SectionSelector.style.scss';
 
-const SectionSelector = ({ sections, observe }) => {
+const SectionSelector = ({ sections, observe, callback }) => {
     const [currentSection, setCurrentSection] = useState(sections?.[0] || null);
     const autoScrollSection = useLocation().state?.section;
 
@@ -56,6 +56,12 @@ const SectionSelector = ({ sections, observe }) => {
             scrollToSection(autoScrollSection);
         }
     }, [autoScrollSection])
+
+    useEffect(() => { // Tell Index Page current section
+        if (callback) {
+            callback(currentSection);
+        }
+    }, [currentSection, callback])
 
     const renderSectionAnchors = () => {
         return sections?.map(section => {

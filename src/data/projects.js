@@ -17,6 +17,54 @@ const projects = [
         image: "https://picsum.photos/720",
         repository: "https://picsum.photos/640"
     },
+    {
+        title: "x",
+        slug: "x",
+        shortDescription: "",
+        longDescription: "",
+        image: "https://picsum.photos/720",
+        repository: "https://picsum.photos/640"
+    },
+    {
+        title: "y",
+        slug: "y",
+        shortDescription: "",
+        longDescription: "",
+        image: "https://picsum.photos/720",
+        repository: "https://picsum.photos/640"
+    },
+    {
+        title: "z",
+        slug: "z",
+        shortDescription: "",
+        longDescription: "",
+        image: "https://picsum.photos/720",
+        repository: "https://picsum.photos/640"
+    },
+    {
+        title: "v",
+        slug: "v",
+        shortDescription: "",
+        longDescription: "",
+        image: "https://picsum.photos/720",
+        repository: "https://picsum.photos/640"
+    },
+    {
+        title: "w",
+        slug: "w",
+        shortDescription: "",
+        longDescription: "",
+        image: "https://picsum.photos/720",
+        repository: "https://picsum.photos/640"
+    },
+    {
+        title: "abc",
+        slug: "abcde",
+        shortDescription: "",
+        longDescription: "",
+        image: "https://picsum.photos/720",
+        repository: "https://picsum.photos/640"
+    },
 ]
 
 export default projects
