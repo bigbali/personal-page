@@ -22,6 +22,7 @@ const SectionSelector = ({ sections, observe, callback }) => {
             // and update the current section
             const observerAction = (entries, observe) => {
                 entries.forEach(entry => {
+                    console.log(entry)
                     if (entry.isIntersecting) {
                         const idSelector = "#" + entry.target.id;
                         const classSelector = "." + entry.target.className;

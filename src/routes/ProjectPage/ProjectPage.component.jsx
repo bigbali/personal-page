@@ -5,8 +5,6 @@ import projects from '../../data/projects';
 import SVGOpenExternal from '../../components/SVGOpenExternal/SVGOpenExternal.component';
 import './ProjectPage.style.scss';
 
-
-
 const ProjectPage = ({ from }) => {
     const slug = useParams().slug;
     const project = projects.find(project => project.slug === slug);
@@ -28,21 +26,28 @@ const ProjectPage = ({ from }) => {
                     Back to Projects
                 </span>
             </Link>
-            <h1>
-                {project.title ?? "Untitled Project"}
-            </h1>
-            <a
-                href={project.repository}
-                target="_blank"
-                rel="noreferrer"
-                className="repository"
-            >
-                {project.repository}
-                <SVGOpenExternal />
-            </a>
-            <p>
-                {project.longDescription}
-            </p>
+            <div className="project-wrapper">
+                <section className="data-section">
+                    <h1>
+                        {project.title ?? "Untitled Project"}
+                    </h1>
+                    <a
+                        href={project.repository}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="repository"
+                    >
+                        {project.repository}
+                        <SVGOpenExternal />
+                    </a>
+                    <p>
+                        {project.longDescription}
+                    </p>
+                </section>
+                <section className="visual-section">
+                    <img src={project.image} alt={project.title} />
+                </section>
+            </div>
         </main>
     )
 }

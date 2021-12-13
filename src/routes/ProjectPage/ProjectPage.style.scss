@@ -105,7 +105,33 @@
     }
 
     p {
-        padding-right: 20%;
         line-height: 1.5rem;
+    }
+
+    .project-wrapper {
+        display: flex;
+
+        @media screen and (max-width: 800px) {
+            flex-direction: column;
+
+            .data-section {
+                padding-right: 0 !important;
+            }
+        }
+
+        .data-section {
+            flex: 2;
+            padding-right: var(--header-height);
+        }
+
+        .visual-section {
+            flex: 1;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
     }
 }

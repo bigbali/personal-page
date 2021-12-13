@@ -3,20 +3,28 @@
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-template-rows: repeat(2, 1fr);
     gap: 2rem;
-    padding: var(--header-height);
 
     .project-card {
-        display: block;
         position: relative;
         border: 1px solid rgba(255, 255, 255, 0.1);
         border-radius: 32px;
         overflow: hidden;
-        padding-top: 100%;
+        aspect-ratio: 1;
         box-shadow:
             0 0 10px rgba(0, 0, 0, 0.5),
             0 0 20px rgba(0, 0, 0, 0.2);
         cursor: pointer;
         transition: box-shadow 0.2s;
+
+        @supports not (aspect-ratio: 1) {
+            padding-top: 100%;
+        }
+
+        @media screen and (max-width: 777px) {
+            &:nth-of-type(n+4) {
+                display: none;
+            }
+        }
 
         &::after {
             content: "";
@@ -69,19 +77,11 @@
             img {
                 transform: scale(130%);
                 filter: grayscale(0.5);
+
+                @supports not (backdrop-filter: blur(1px)) {
+                    filter: blur(3px);
+                }
             }
         }
-    }
-}
-
-@supports not (backdrop-filter: blur(1px)) {
-    .portfolio-grid .project-card:hover img {
-        filter: blur(3px);
-    }
-}
-
-@supports not (aspect-ratio: 1) {
-    .portfolio-grid .project-card {
-        padding-top: 100%;
     }
 }

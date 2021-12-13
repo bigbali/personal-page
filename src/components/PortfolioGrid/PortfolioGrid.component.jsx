@@ -17,7 +17,7 @@ const PortfolioGrid = ({ className }) => {
                 >
                     <img
                         className="project-background"
-                        src={project.image || fallback}
+                        src={project.thumbnail || fallback}
                         alt=""
                     />
                     <p className="title">

@@ -7,18 +7,23 @@
     right: 0;
     top: 0;
     height: var(--header-height);
-    padding: 0 5rem 0 5rem;
+    padding: 0 var(--header-height) 0 var(--header-height);
     background-color: var(--color-main-bg-glass);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 
-    >.brand {
+    @media screen and (max-width: 640px) {
+        display: none;
+    }
+
+    .brand {
         flex: 1;
         display: flex;
         align-items: center;
+        position: relative;
     }
 
-    >.navigation {
+    .navigation {
         flex: 2;
         display: flex;
         justify-content: flex-end;
@@ -31,18 +36,42 @@
             list-style: none;
 
             a {
+                position: relative;
                 padding: 10px 20px;
                 background-image: linear-gradient(var(--color-theme),
-                        var(--color-theme));
+                        var(--color-theme),
+                        rgba(0, 0, 0, 0) 90%);
                 background-repeat: no-repeat;
                 background-size: 100% 0;
                 background-position: 0 0;
                 transition: background-size 0.1s ease,
-                    background-position 0.1s ease,
                     color 0.1s;
 
+                &::after {
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    background-image: linear-gradient(90deg,
+                            transparent,
+                            var(--color-theme) 33% 66%,
+                            transparent);
+                    background-size: 0 100%;
+                    background-position: center 100%;
+                    background-repeat: no-repeat;
+                    height: 2px;
+                    transition: background-size 0.5s;
+                }
+
+                &.active {
+                    &::after {
+                        background-size: 100% 100%;
+                    }
+                }
+
                 &:hover {
-                    background-size: 100% 100%;
+                    background-size: 100% 200%;
                     color: var(--color-main-fg);
                 }
             }

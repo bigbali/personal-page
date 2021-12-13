@@ -156,6 +156,14 @@ const IndexPage = (props) => {
             <section ref={portfolio} id="portfolio" className="portfolio">
                 <h1>See my work:</h1>
                 <PortfolioGrid className="card-animation" />
+                <a
+                    href="https://www.github.com/bigbali"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mobile-show-more"
+                >
+                    See more on GitHub
+                </a>
             </section>
             <section ref={contact} id="contact" className="contact">
                 <h1>Contact me:</h1>

@@ -98,10 +98,13 @@
     section {
         height: max-content;
         min-height: 100vh;
+        padding-left: 4rem;
+        padding-right: 4rem;
 
         h1 {
             margin: 0;
             padding-top: 2rem;
+            padding-bottom: 2rem;
             text-align: center;
             font-size: 4rem;
             font-weight: 300;
@@ -109,8 +112,6 @@
                 0 0 10px rgba(255, 255, 255, 0.5),
                 0 0 15px rgba(255, 255, 255, 0.3),
                 0 0 20px rgba(255, 255, 255, 0.1);
-
-            // Animated with GSAP
             transform: translateX(8rem);
             opacity: 0;
         }
@@ -119,5 +120,20 @@
     .card-animation {
         opacity: 0;
         transform: scale(1.1) translateY(-4rem);
+    }
+
+    .mobile-show-more {
+        display: none;
+        margin-top: 2rem;
+        margin-left: 2rem;
+        margin-right: 2rem;
+        text-align: center;
+        padding: 1rem;
+        background-color: var(--color-theme);
+        border-radius: 32px;
+
+        @media screen and (max-width: 640px) {
+            display: block;
+        }
     }
 }
