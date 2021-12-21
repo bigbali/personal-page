@@ -1,9 +1,4 @@
 .expandable {
-    //background-color: rgba(128, 128, 0, 0.5);
-    //width: 50%;
-    // margin-top: 0.5rem;
-    // margin-bottom: 0.5rem;
-
     .caption {
         display: inline-block;
         margin-bottom: 0.5rem;
@@ -34,16 +29,24 @@
         max-height: 0;
         opacity: 0;
         padding-right: 50%;
-        //transition: opacity 0.2s;
+        pointer-events: none;
         transition: opacity 0.2s, max-height 0.2s;
 
+        @media screen and (max-width: 900px) {
+            padding-right: 0;
+        }
     }
 
     &.expanded {
         .body {
             opacity: 1;
             max-height: 50vh;
+            pointer-events: all;
             transition: opacity 0.2s, max-height 1s;
+
+            @media screen and (max-width: 900px) {
+                max-height: 100vh;
+            }
         }
     }
 }
