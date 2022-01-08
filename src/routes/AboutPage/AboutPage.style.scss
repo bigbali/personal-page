@@ -1,16 +1,31 @@
 .about-page {
     padding: var(--header-height);
 
+    &.text {
+        .points {
+            display: none;
+        }
+    }
+
+    &.points {
+        .text {
+            display: none;
+        }
+    }
+
     h1 {
         margin-bottom: 0;
     }
 
     h2 {
-        margin-top: 0.5rem;
+        margin-top: 1rem;
+        margin-bottom: 0.25rem;
     }
 
     p {
         margin-bottom: 0.25rem;
+        width: clamp(15rem, 100%, 60rem);
+        line-height: 1.5rem;
     }
 
     .github-anchor {
@@ -44,5 +59,9 @@
                 stroke: var(--color-theme);
             }
         }
+    }
+
+    .expandable p {
+        margin-top: 0;
     }
 }

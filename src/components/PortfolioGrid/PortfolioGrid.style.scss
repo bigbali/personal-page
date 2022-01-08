@@ -26,6 +26,12 @@
             }
         }
 
+        @media screen and (max-width: 1080px) {
+            &:nth-of-type(n+7) {
+                display: none;
+            }
+        }
+
         &::after {
             content: "";
             position: absolute;

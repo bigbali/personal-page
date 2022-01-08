@@ -22,7 +22,7 @@ const SectionSelector = ({ sections, observe, callback }) => {
             // and update the current section
             const observerAction = (entries, observe) => {
                 entries.forEach(entry => {
-                    console.log(entry)
+
                     if (entry.isIntersecting) {
                         const idSelector = "#" + entry.target.id;
                         const classSelector = "." + entry.target.className;
@@ -31,7 +31,7 @@ const SectionSelector = ({ sections, observe, callback }) => {
                         sections?.forEach((section) => {
                             if (section.id === idSelector
                                 || section.class === classSelector) {
-                                setCurrentSection(section)
+                                setCurrentSection(section);
                             }
                         })
                     }
@@ -46,8 +46,13 @@ const SectionSelector = ({ sections, observe, callback }) => {
 
             sections?.forEach(section => {
                 // For each section, add an observer
-                observer.observe(document.querySelector(section.id || section.class))
+                observer.observe(document.querySelector(section.id || section.class));
             })
+
+            // Remove observers in cleanup
+            return () => {
+                observer.disconnect();
+            }
         }
     }, [sections, observe])
 
@@ -67,6 +72,7 @@ const SectionSelector = ({ sections, observe, callback }) => {
     const renderSectionAnchors = () => {
         return sections?.map(section => {
             const sectionSelector = section.id || section.class;
+
             return (
                 <span key={sectionSelector}
                     className={section === currentSection

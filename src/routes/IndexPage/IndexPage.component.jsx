@@ -149,7 +149,7 @@ const IndexPage = (props) => {
                         </span>
                     </span>
                     <span className="do">
-                        I code your imagination into reality.
+                        I craft ideas into reality.
                     </span>
                 </div>
             </section>
@@ -167,13 +167,13 @@ const IndexPage = (props) => {
             </section>
             <section ref={contact} id="contact" className="contact">
                 <h1>Contact me:</h1>
-                {/* TODO: Contact form component */}
-                <form action="">
-                    <input type="text" />
-                    <input type="text" />
-                    <input type="text" />
-                    <button></button>
-                </form>
+                <h2>Reach me via:</h2>
+                <ul>
+                    <li>Email?</li>
+                    <li>Slack?</li>
+                    <li>Discord?</li>
+                    <li>Facebook?</li>
+                </ul>
             </section>
         </main>
     )
