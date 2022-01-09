@@ -13,7 +13,17 @@ const AboutPage = () => {
                 ? "text"
                 : "points"
             }`}>
-            <h1>About me:</h1>
+            <div className="aligner">
+                <h1>About me:</h1>
+                <div className="switch" onClick={() => {
+                    setIsText(!isText)
+                }}
+                >
+                    <div>
+
+                    </div>
+                </div>
+            </div>
             <a
                 href="https://www.github.com/bigbali"
                 target="_blank"
@@ -23,10 +33,6 @@ const AboutPage = () => {
                 Check me out on GitHub
                 <SVGOpenExternal />
             </a>
-            <button onClick={() => {
-                setIsText(!isText)
-            }}
-            >KLIKMI</button>
             <div className="text">
                 <p>
                     I'm an enthusiastic software developer, currently working as a software developer at
@@ -64,7 +70,7 @@ const AboutPage = () => {
                         <AE to="https://en.wikipedia.org/wiki/Gheorgheni">Gheorgheni,</AE>
                         between the woody wonders of the Transylvanian mountains.
                         Since kindergarten, I was quite an artist. For this reason, I was sent to study art in elementary school,
-                        then later I went to study image and text processing in the Technical College of Batthyány Ignác.
+                        then later I went to study image and text processing at the Technical College of Batthyány Ignác.
                         This is where I started gaining an interest in the art of computer science, and not long after I was already
                         studying C#, writing documentation in a notebook and reading it during pause.
                         My first programs were made for desktop, which included: screen lockers,

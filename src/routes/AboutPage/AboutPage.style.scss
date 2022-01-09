@@ -5,6 +5,19 @@
         .points {
             display: none;
         }
+
+        .switch {
+            border: 3px solid var(--color-theme-glass-border);
+
+            div {
+                background-color: var(--color-main-bg-glass-border);
+            }
+
+            div::after {
+                transform: translateX(2rem);
+                background-color: var(--color-theme);
+            }
+        }
     }
 
     &.points {
@@ -14,7 +27,47 @@
     }
 
     h1 {
-        margin-bottom: 0;
+        display: inline-block;
+        margin: 0;
+    }
+
+    .aligner {
+        display: flex;
+        align-items: center;
+    }
+
+    .switch {
+        display: inline-block;
+        flex-direction: row;
+        width: 4rem;
+        height: 2rem;
+        margin-left: auto;
+        position: relative;
+        border: 3px solid var(--color-main-fg);
+        border-radius: 2rem;
+
+        div {
+            position: absolute;
+            inset: 0;
+            border-radius: 2rem;
+            background-color: var(--color-main-bg-glass-border);
+
+            &::before {
+                content: attr(data-text);
+                position: absolute;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                height: calc(2rem - 6px);
+                width: calc(2rem - 6px);
+                background-color: var(--color-main-fg-faded);
+                border-radius: 50%;
+                transition: transform 0.2s;
+                transition-timing-function: ease-out;
+            }
+        }
     }
 
     h2 {
