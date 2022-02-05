@@ -114,6 +114,15 @@
                 0 0 20px rgba(255, 255, 255, 0.1);
             transform: translateX(8rem);
             opacity: 0;
+
+            @include mobile {
+                @at-root {
+                    * {
+                        // Just to check if selector works
+                        color: blue !important;
+                    }
+                }
+            }
         }
     }
 

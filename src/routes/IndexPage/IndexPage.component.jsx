@@ -154,7 +154,7 @@ const IndexPage = (props) => {
                 </div>
             </section>
             <section ref={portfolio} id="portfolio" className="portfolio">
-                <h1>See my work:</h1>
+                <h1>Check out some personal projects:</h1>
                 <PortfolioGrid className="card-animation" />
                 <a
                     href="https://www.github.com/bigbali"
